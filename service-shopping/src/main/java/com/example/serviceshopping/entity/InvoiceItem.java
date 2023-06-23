@@ -1,5 +1,7 @@
 package com.example.serviceshopping.entity;
 
+import com.example.serviceshopping.model.Product;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -29,6 +31,8 @@ public class InvoiceItem  {
     @Transient
     private Double subTotal;
 
+    @Transient
+    private Product product;
 
     public Double getSubTotal(){
         if (this.price >0  && this.quantity >0 ){
