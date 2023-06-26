@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.example.serviceshopping.model.Customer;
 
-@FeignClient(name = "service-customer", path = "/customers",fallback = CustomerHystrixFallbackFactory.class)
+@FeignClient(name = "service-customer", path = "/customers")
 public interface CustomerClient {
     @GetMapping(value = "/{id}")
     public ResponseEntity<Customer> getCustomer(@PathVariable("id") long id);
